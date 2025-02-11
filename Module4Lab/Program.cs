@@ -22,7 +22,7 @@ namespace Module4Lab
                 {
                     case "1":
                         Console.Clear();
-                        RocketCountdown.RunRocketProgram();
+                        RocketCountdown.RunRocketProgram(args);
                         break;
                     case "2":
                         Console.Clear();
