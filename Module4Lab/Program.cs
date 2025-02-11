@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+using System;
 
 namespace Module4Lab
 {
@@ -7,39 +6,39 @@ namespace Module4Lab
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Rocket Countdown!");
-            Console.WriteLine("Get ready for liftoff...\n");
-
-            // First countdown using a for loop
-            Console.WriteLine("Starting main engine test...");
-            for (int i = 5; i >= 1; i--)
+            while (true)
             {
-                Console.WriteLine($"T-{i} seconds...");
-                Thread.Sleep(1000); // Pause for one second
-            } // end loop
-            Console.WriteLine("Main engines tested successfully!\n");
+                Console.Clear();
+                Console.WriteLine("🚀 Module 4 Lab Menu 🦁");
+                Console.WriteLine("----------------------");
+                Console.WriteLine("1. Launch Rocket Countdown");
+                Console.WriteLine("2. Manage Zoo Animals");
+                Console.WriteLine("3. Exit");
+                Console.Write("\nEnter your choice (1-3): ");
 
-            // Second countdown using a while loop
-            Console.WriteLine("Beginning final countdown!");
-            int countdown = 10;
-            while (countdown > 0)
-            {
-                Console.WriteLine($"T-{countdown} seconds...");
-                Thread.Sleep(1000);
-                countdown--;
-            } // end while loop
+                string choice = Console.ReadLine();
 
-            // Liftoff sequence
-            Console.WriteLine("\n🚀 Liftoff! We have liftoff!");
-            
-            // Altitude reporting using a for loop with a different increment
-            for (int altitude = 0; altitude <= 50; altitude += 10)
-            {
-                Console.WriteLine($"Altitude: {altitude} kilometers");
-                Thread.Sleep(500);
-            } // end for loop
+                switch (choice)
+                {
+                    case "1":
+                        Console.Clear();
+                        RocketCountdown.RunRocketProgram();
+                        break;
+                    case "2":
+                        Console.Clear();
+                        ZooAnimals.RunZooProgram();
+                        break;
+                    case "3":
+                        Console.WriteLine("\nThank you for using the Module 4 Lab programs!");
+                        return;
+                    default:
+                        Console.WriteLine("\nInvalid choice. Please enter 1, 2, or 3.");
+                        break;
+                }
 
-            Console.WriteLine("\nMission successful! The rocket has reached its target altitude.");
-        } // end main
-    } // end program 
-} // end namespace
+                Console.WriteLine("\nPress Enter to return to the menu...");
+                Console.ReadLine();
+            }
+        }
+    }
+}
